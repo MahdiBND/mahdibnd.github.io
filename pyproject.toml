@@ -9,3 +9,8 @@ dependencies = [
     "openai-agents>=0.22.2",
     "python-dotenv>=1.2.3",
 ]
+
+[tool.uv.workspace]
+members = [
+    "bots",
+]
