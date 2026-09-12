@@ -1,0 +1,3 @@
+httpx2
+openai-agents
+python-dotenv
