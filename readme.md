@@ -1,1 +1,1 @@
-Software Engineer, iOS Developer
+The digital version of me
