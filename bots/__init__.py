@@ -12,5 +12,6 @@ set_tracing_disabled(True)
 
 # Bots
 from .planner import planner
+from .coder import coder
 
-__all__ = ["planner"]
+__all__ = ["planner", "coder"]
