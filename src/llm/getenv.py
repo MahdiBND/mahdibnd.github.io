@@ -1,7 +1,13 @@
 import os
+from pathlib import Path
+
 from dotenv import load_dotenv
 
-load_dotenv()
+# Global config
+load_dotenv(Path.home() / ".config" / "plan-cli" / ".env")
+
+# Project config
+load_dotenv(Path.cwd() / ".env")
 
 
 def get_api_key(provider=""):
@@ -22,6 +28,6 @@ def get_relay_url():
     RELAY = os.getenv("RELAY_URL")
 
     if not RELAY:
-        raise ValueError("RELAY_URL is not set in environment or .env file")
+        return None
 
     return RELAY

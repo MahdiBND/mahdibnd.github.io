@@ -1,7 +1,7 @@
 from bots import Agent, model
 from pydantic import BaseModel
 
-from prompts import INSTRUCTIONS
+from .prompts import INSTRUCTIONS
 
 model = model()
 
