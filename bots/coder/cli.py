@@ -3,14 +3,18 @@ from agents import Runner
 from bots.coder import coder
 
 
-async def generate_code(request: str) -> str:
+def generate_code(request: str) -> str:
     result = Runner.run_sync(coder, request)
     return result.final_output.code
 
 
 def main():
-    # Read the full request from stdin
-    request = sys.stdin.read().strip()
+    if len(sys.argv) < 2:
+        print("No request provided", file=sys.stderr)
+        sys.exit(1)
+
+    # Join all arguments after the script name
+    request = " ".join(sys.argv[1:]).strip()
 
     if not request:
         print("No request provided", file=sys.stderr)
@@ -18,7 +22,6 @@ def main():
 
     try:
         code = generate_code(request)
-        # IMPORTANT: only print the code to stdout
         print(code, end="")
     except Exception as e:
         print(str(e), file=sys.stderr)

@@ -22,11 +22,11 @@ class RelayTransport(httpx2.AsyncHTTPTransport):
             path += "?" + parsed.query
 
         # Optional debug
-        print("\n========== RELAY DEBUG ==========")
-        print(f"Original URL : {original_url}")
-        print(f"Target       : {target}")
-        print(f"Path         : {path}")
-        print("=================================\n")
+        # print("\n========== RELAY DEBUG ==========")
+        # print(f"Original URL : {original_url}")
+        # print(f"Target       : {target}")
+        # print(f"Path         : {path}")
+        # print("=================================\n")
 
         # Rewrite the request to the relay.
         request.url = httpx2.URL(RELAY)
